@@ -118,7 +118,8 @@ export const config = {
 	    browserVersion: "95.0",
         platformName: "Windows 10",
         enableNetworkThrottling: true ,
-        tunnel: true
+        tunnel: true,
+        build: "Chrome 95-win 10 with tunnel"
        
     
 		    
