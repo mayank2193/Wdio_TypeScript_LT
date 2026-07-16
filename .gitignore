@@ -1,0 +1,5 @@
+
+.lambdatest
+lambda_api.log
+
+node_modules

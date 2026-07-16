@@ -44,8 +44,9 @@ export const config = {
     // according to your user and key information. However, if you are using a private Selenium
     // backend you should define the host address, port, and path here.
     //
-    hostname: 'hub.lambdatest.com',
+    hostname: 'mobile-hub.lambdatest.com',
     port: 80,
+ 
     path: "/wd/hub",
     //
     // =================
@@ -80,7 +81,7 @@ export const config = {
     // will be called from there.
     //
     specs: [
-        './specs/**/*.ts'
+        './test/app/**/*.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -109,23 +110,19 @@ export const config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-    
+
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        // grid with only 5 firefox instances available you can make sure that not more than
-        // 5 instances get started at a time.
-     
-        browserName: "Chrome",
-	    browserVersion: "95.0",
-        platformName: "Windows 10",
-        "wdio:enforceWebDriverClassic": true,
-        "LT:Options": {
-            enableNetworkThrottling: true,
-            tunnel: true,
-            build: "Chrome 95-win 10 with tunnel"
-        }
-       
-    
-		    
+        // grid wit
+
+        platformName: "android",
+
+   "lt:options": {
+		"w3c": true,
+		"deviceName": ".*",
+		"platformVersion": "15",
+		"isRealMobile": true,
+        "app":"android_appurl"
+	}
 		   
 	// 	    w3c: true,
 	// 	    "plugin": "node_js-webdriverio"
@@ -184,7 +181,7 @@ export const config = {
     // commands. Instead, they hook themselves up into the test process.
     services: [
         ['lambdatest', {
-            tunnel: true
+            tunnel: false
         }]
     ],
     
